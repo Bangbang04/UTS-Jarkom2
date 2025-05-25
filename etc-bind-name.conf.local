@@ -1,1 +1,15 @@
+sudo nano /etc/bind/named.conf.local
+
+zone "server.local" {
+    type master;
+    file "/etc/bind/db.server.local";
+};
+
+zone "1.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.192";
+};
+
+sudo cp /etc/bind/db.local /etc/bind/db.server.local
+sudo cp /etc/bind/db.127 /etc/bind/db.192
 
